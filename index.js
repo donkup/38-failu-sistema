@@ -1,15 +1,16 @@
-const { log } = require('console');
 const _data = require('./lib/data');
+const helpers = require('./lib/helpers');
 
-// _data.read('users', 'petras', (err, data) => {
-//     if (err || !data) {
-//         console.log('Nepavyko perskaityti failo...');
-//         return false;
-//     }
+_data.read('user', 'petras', (err, data) => {
+    if (err || !data) {
+        console.log('Nepavyko perskaityti failo...');
+        return false;
+    }
 
-//     const obj = JSON.parse(data);
-//     console.log(obj);
-// })
+    console.log(data);
+    const obj = helpers.parseJsonToObject(data);
+    console.log(obj);
+})
 
 
 // const pazymiai = [10, 2, 8, 4, 6];
@@ -27,7 +28,7 @@ const _data = require('./lib/data');
 //             return false;
 //         }
 
-//         const obj = JSON.parse(data);
+//         const obj = helpers.parseJsonToObject(data);
 //         console.log(obj);
 //     })
 // });
@@ -38,7 +39,7 @@ const _data = require('./lib/data');
 //     car: 'Audi',
 //     color: 'red'
 // }
-// _data.update('users', 'petras', petras, (err) => {
+// _data.update('user', 'petras', petras, (err) => {
 //     if (err) {
 //         console.log(err);
 //         return false;
@@ -46,22 +47,22 @@ const _data = require('./lib/data');
 
 //     console.log('Petro duomenys atnaujinti sekmingai.');
 
-//     _data.read('users', 'petras', (err, data) => {
+//     _data.read('user', 'petras', (err, data) => {
 //         if (err || !data) {
 //             console.log('Nepavyko perskaityti Petro failo...');
 //             return false;
 //         }
 
-//         const obj = JSON.parse(data);
+//         const obj = helpers.parseJsonToObject(data);
 //         console.log(obj);
 //     })
 // });
 
-_data.delete('user', 'maryte', (err) => {
-    if (err) {
-        console.log(err);
-        return false;
-    }
+// _data.delete('user', 'maryte', (err) => {
+//     if (err) {
+//         console.log(err);
+//         return false;
+//     }
 
-    console.log('Failas sekmingai istrintas.');
-})
+//     console.log('Failas sekmingai istrintas.');
+// })
