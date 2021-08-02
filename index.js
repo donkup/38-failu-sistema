@@ -1,16 +1,16 @@
 const _data = require('./lib/data');
 const helpers = require('./lib/helpers');
 
-_data.read('user', 'petras', (err, data) => {
-    if (err || !data) {
-        console.log('Nepavyko perskaityti failo...');
-        return false;
-    }
+// _data.read('user', 'petras', (err, data) => {
+//     if (err || !data) {
+//         console.log('Nepavyko perskaityti failo...');
+//         return false;
+//     }
 
-    console.log(data);
-    const obj = helpers.parseJsonToObject(data);
-    console.log(obj);
-})
+//     console.log(data);
+//     const obj = helpers.parseJsonToObject(data);
+//     console.log(obj);
+// })
 
 
 // const pazymiai = [10, 2, 8, 4, 6];
@@ -66,3 +66,30 @@ _data.read('user', 'petras', (err, data) => {
 
 //     console.log('Failas sekmingai istrintas.');
 // })
+
+// _data.list('marks', (err, data) => {
+//     if (err || !data) {
+//         console.log(err);
+//         return false;
+//     }
+
+//     console.log(data);
+// })
+
+const zodis = 'Labas rytas';
+const uzsifruotasZodis = helpers.hash(zodis);
+
+console.log(zodis);
+console.log(uzsifruotasZodis);
+
+const zodis2 = 'Labas rytat';
+const uzsifruotasZodis2 = helpers.hash(zodis2);
+
+console.log(zodis2);
+console.log(uzsifruotasZodis2);
+
+const zodis3 = 'Labas rytat';
+const uzsifruotasZodis3 = helpers.hash(zodis3);
+
+console.log(zodis3);
+console.log(uzsifruotasZodis3);
